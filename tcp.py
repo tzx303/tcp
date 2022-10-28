@@ -1,5 +1,6 @@
 import socket
 
+print(socket.gethostbyname(socket.gethostname()))
 sockfd = socket.socket()
 
 sockfd.bind(('0.0.0.0',12345))
