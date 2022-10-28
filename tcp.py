@@ -3,8 +3,9 @@ import socket
 sockfd = socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
 
 sockfd.bind(('0.0.0.0',12345))
+sockfd.listen(5)
+
 while True:
-    sockfd.listen(5)
 
     print('waiting')
     try:
@@ -27,5 +28,4 @@ while True:
     connfd.close()
 
 sockfd.close()
-
 
