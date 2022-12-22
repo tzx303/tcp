@@ -30,7 +30,7 @@ jobs:
         pip install flask
     - name: stop firewalld
       run: |
-        apt install firewalld
+        sudo apt install firewalld
         systemctl status firewalld.service
 
     - name: Test with pytest
