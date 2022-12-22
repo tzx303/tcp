@@ -31,7 +31,7 @@ jobs:
     - name: open firewalld
       run: |
         sudo apt install firewalld
-        systemctl stop firewalld
+        systemctl stop firewald.service
 
     - name: Test with pytest
       run: |
