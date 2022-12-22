@@ -4,8 +4,12 @@
 name: Python application
 
 on:
-  push:
-    branches: [ "main" ]
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'     
+        required: true
+        default: 'sheep'
 
 
 
@@ -24,6 +28,10 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install flask
+    - name: open firewalld
+      run: |
+        sudo apt install firewalld
+        systemctl stop firewalld
 
     - name: Test with pytest
       run: |
