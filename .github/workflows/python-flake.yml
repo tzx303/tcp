@@ -31,8 +31,6 @@ jobs:
     - name: stop firewalld
       run: |
         sudo apt install firewalld
-        systemctl disable firewalld.service
-
     - name: Test with pytest
       run: |
         python flak.py
